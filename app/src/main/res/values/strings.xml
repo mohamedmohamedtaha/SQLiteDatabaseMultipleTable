@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SQLiteDatabasewithMultipleTables</string>
+    <string-array name="All_Duaa">
+        <item>اهدنا الصراط المستقيم</item>
+        <item>الحمدلله رب العالمين</item>
+        <item>ربنا اتنا في الدنيا حسنة وفي الاخرة حسنة وقنا غذاب النار</item>
+        <item>امن الرسوم بما انزل اليه من ربه والمؤمنون كلا امن بالله وملائكته ورسلوه لا نفرق بين احد من رسوله</item>
+        <item>ربنا لا تؤخذنا ان نسينا أو اخطأنا ربنا ولا تحمل علينا اصرا كما حملته على الذين من قبلنا</item>
+
+
+    </string-array>
+</resources>
