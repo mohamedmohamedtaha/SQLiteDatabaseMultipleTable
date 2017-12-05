@@ -84,9 +84,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //________________________________________________"tags" table methods ___________________//
     //Creating tag
-    public long createTag(Tag tag){
+    public long createTag(Todo tag){
         SQLiteDatabase db =this.getWritableDatabase();
-
         ContentValues values=new ContentValues();
         values.put(KEY_TAG_NAME,tag.getTag_name());
         values.put(KEY_CREATED_AT,getDateTime());
@@ -96,14 +95,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return tag_id;
     }
     //getting all tag
-    public ArrayList<Tag> getAllTags(){
+    public ArrayList<Todo> getAllTags(){
         SQLiteDatabase db =this.getReadableDatabase();
-        ArrayList<Tag> tags =new ArrayList<>();
+        ArrayList<Todo> tags =new ArrayList<>();
         String []colums = {KEY_ID,KEY_TAG_NAME,KEY_CREATED_AT};
         Cursor c =db.query(TABLE_TAG,colums,null,null,null,null,null);
         //looping through all rows and adding to list
         for (c.moveToFirst();!c.isAfterLast();c.moveToNext()){
-            Tag t =new Tag();
+            Todo t =new Todo();
             t.setId(c.getInt((c.getColumnIndex(KEY_ID))));
             t.setTag_name(c.getString(c.getColumnIndex(KEY_TAG_NAME)));
             t.setDate(c.getString(c.getColumnIndex(KEY_CREATED_AT)));
@@ -112,7 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }return tags;
     }
     //Updating a tag
-    public int updatetag(Tag tag){
+    public int updatetag(Todo tag){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues values=new ContentValues();
         values.put(KEY_TAG_NAME,tag.getTag_name());
@@ -122,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Deleting a tag
-    public void deleteTag (Tag tag,boolean should_delete_all_tag_todos) {
+    public void deleteTag (Todo tag,boolean should_delete_all_tag_todos) {
         SQLiteDatabase db = this.getWritableDatabase();
         //before deleting tag check if todos under this tag should also be deleted
         if (should_delete_all_tag_todos) {
@@ -203,8 +202,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Todo td = new Todo();
                 td.setId(c.getInt((c.getColumnIndex(KEY_ID))));
                 td.setNote(c.getString(c.getColumnIndex(KEY_NOTE)));
-                td.setCreated_at(c.getString(c.getColumnIndex(KEY_CREATED_AT)));
-                //adding to todo list
+                td.setTag_name(c.getString(c.getColumnIndex(KEY_TAG_NAME)));
+              //  td.setCreated_at(c.getString(c.getColumnIndex(KEY_CREATED_AT)));
+
+            //adding to todo list
                 todos.add(td);
         }
         return todos;
@@ -301,3 +302,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 }
+
+
+
+
+
+
+
+
+
+

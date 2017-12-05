@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class ListViewAdaptor extends BaseAdapter {
     private final LayoutInflater inflater;
-    private final ArrayList<Tag>tags;
+    private final ArrayList<Todo>tags;
 
-    public ListViewAdaptor(Context context, ArrayList<Tag> tags) {
+    public ListViewAdaptor(Context context, ArrayList<Todo> tags) {
         this.inflater = LayoutInflater.from(context);
         this.tags = tags;
     }
@@ -51,3 +51,16 @@ public class ListViewAdaptor extends BaseAdapter {
         return view;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

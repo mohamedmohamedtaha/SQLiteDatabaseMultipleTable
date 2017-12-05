@@ -103,8 +103,6 @@ catch (Exception e){
 
 }*/
              //addNotification();
-
-
         spinner =(Spinner)findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
         loadSpinnerData();
@@ -123,18 +121,12 @@ catch (Exception e){
     public void saveTAG(View view){
         if (tagET.getText().toString().trim().length()<=0){
             Toast.makeText(getApplicationContext(),"Enter data",Toast.LENGTH_LONG).show();
-
         }else {
-            Tag tag = new Tag();
+            Todo tag = new Todo();
             tag.setTag_name(tagET.getText().toString());
             db.createTag(tag);
             Toast.makeText(getApplicationContext(),"Saved Succeflly",Toast.LENGTH_LONG).show();
-
         }
-
-
-
-
     }
     public void saveTODO(View view){
         if (todoET.getText().toString().trim().length()<=0){
@@ -164,7 +156,6 @@ catch (Exception e){
         Intent intent=new Intent(MainActivity.this,ListTodoTagActivity.class);
         intent.putExtra("getValueSpinner",tagSpinner);
         startActivity(intent);
-
     }
     public void loadSpinnerData(){
         //Spinner Drop down elements
@@ -186,9 +177,7 @@ catch (Exception e){
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
-
     @Override
     protected void onResume() {
         loadSpinnerData();

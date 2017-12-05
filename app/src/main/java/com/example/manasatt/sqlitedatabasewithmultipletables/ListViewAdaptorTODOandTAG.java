@@ -45,6 +45,27 @@ public class ListViewAdaptorTODOandTAG extends BaseAdapter {
         TextView showDateTag=(TextView)view.findViewById(R.id.showDateTag);
         showIdTag.setText(String.valueOf(todos.get(position).getId()));
         showTag.setText(todos.get(position).getNote());
+        showDateTag.setText(todos.get(position).getTag_name());
+
         return view;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

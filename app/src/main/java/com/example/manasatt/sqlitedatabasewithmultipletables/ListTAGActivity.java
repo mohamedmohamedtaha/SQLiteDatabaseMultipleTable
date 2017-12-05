@@ -41,9 +41,9 @@ public class ListTAGActivity extends AppCompatActivity implements AdapterView.On
     protected void onResume() {
         listViewTag =(ListView)findViewById(R.id.listViewTAG);
         db = new DatabaseHelper(this);
-        ArrayList<Tag> tags = db.getAllTags();
+        ArrayList<Todo> tags = db.getAllTags();
         for (int i = 0;i<tags.size();i++){
-            Tag tag = tags.get(i);
+            Todo tag = tags.get(i);
         }
         listViewTag.setAdapter(new ListViewAdaptor(this,tags));
 
@@ -51,3 +51,17 @@ public class ListTAGActivity extends AppCompatActivity implements AdapterView.On
         super.onResume();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
